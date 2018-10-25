@@ -11,10 +11,7 @@ const RNWaveformAudioLib = NativeModules.RNWaveformAudioLib;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
-  inputRowContainer: {
-    flexDirection: 'row',
+    // flexDirection: 'row',
   },
 });
 

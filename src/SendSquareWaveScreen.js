@@ -3,13 +3,13 @@ import React, { Component } from "react";
 
 import InputField from "./components/InputField";
 import { NativeModules } from "react-native";
-import StopSquareWaveScreen from './StopSquareWaveScreen';
+import StopSquareWaveScreen from "./StopSquareWaveScreen";
 
 const RNWaveformAudioLib = NativeModules.RNWaveformAudioLib;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    // flex: 1
   },
   inputRowContainer: {
     flexDirection: "row"
@@ -149,10 +149,8 @@ export default class SendSquareWaveScreen extends Component {
             }}
             keyboardType="numeric"
           />
-
           <Button title="Send" onPress={this.handleSend} />
         </ScrollView>
-        <StopSquareWaveScreen tabLabel="Stop Square Wave" />
       </View>
     );
   }
