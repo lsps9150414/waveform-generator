@@ -45,7 +45,7 @@ export default class StopSquareWaveScreen extends Component {
           onChangeText={(value) => { this.updateState('delayTime', value); }}
           keyboardType="numeric"
         />
-        <Button title="Send" onPress={this.handleSend} />
+        <Button title="Send Stop Signal" onPress={this.handleSend} />
       </View>
     );
   }

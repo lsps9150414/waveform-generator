@@ -9,7 +9,6 @@ import {
 
  import TabView from 'react-native-scrollable-tab-view';
  import SendSquareWaveScreen from './src/SendSquareWaveScreen';
- import StopSquareWaveScreen from './src/StopSquareWaveScreen';
  import SendPulseSequenceScreen from './src/SendPulseSequenceScreen';
 
 const styles = StyleSheet.create({
@@ -32,9 +31,10 @@ export default class App extends React.Component {
       <View style={styles.container}>
          <Text>Android Test Run</Text>
          <TouchableOpacity onPress={() => { Keyboard.dismiss(); }}>
-         <SendSquareWaveScreen tabLabel="Send Square Wave" />
-         <SendPulseSequenceScreen tabLabel="Send Pulse Sequence" />
-         <StopSquareWaveScreen tabLabel="Stop Square Wave" />
+         <TabView>
+            <SendSquareWaveScreen tabLabel="Send Square Wave" />
+            <SendPulseSequenceScreen tabLabel="Send Pulse Sequence" />
+         </TabView>
          </TouchableOpacity>
       </View>
     );

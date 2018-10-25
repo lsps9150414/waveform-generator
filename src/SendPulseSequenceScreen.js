@@ -6,6 +6,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import InputField from './components/InputField';
+import StopSquareWaveScreen from './StopSquareWaveScreen';
 
 import { NativeModules } from "react-native";
 const RNWaveformAudioLib = NativeModules.RNWaveformAudioLib;
@@ -77,7 +78,7 @@ export default class SendPulseSequence extends Component {
 
     return (
       <View style={styles.container}>
-      <ScrollView style={styles.scrollViewStyle} horizontal={true}>
+      <ScrollView style={styles.scrollViewStyle}>
         <View style={styles.inputRowContainer}>
           <InputField
             title="firstPulseSpaceLeft"
@@ -131,6 +132,7 @@ export default class SendPulseSequence extends Component {
 
         <Button title="Send" onPress={this.handleSend} />
         </ScrollView>  
+        <StopSquareWaveScreen tabLabel="Stop Square Wave" />
       </View>
     );
   }
