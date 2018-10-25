@@ -3,7 +3,6 @@ import React, { Component } from "react";
 
 import InputField from "./components/InputField";
 import { NativeModules } from "react-native";
-import StopSquareWaveScreen from "./StopSquareWaveScreen";
 
 const RNWaveformAudioLib = NativeModules.RNWaveformAudioLib;
 

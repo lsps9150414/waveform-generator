@@ -66,6 +66,7 @@ export default class SendPulseSequence extends Component {
     let rightArray = this.state.pulseSpaceTimeDurationRight;
     console.log(leftArray[0]);
     nPstd.push(parseInt(leftArray[0]), parseInt(rightArray[0]));
+    // nPstd = [55, 77];
     RNWaveformAudioLib.SendPulseSequence(nFpsi, nAmp_pp, nPstd);
   };
 
