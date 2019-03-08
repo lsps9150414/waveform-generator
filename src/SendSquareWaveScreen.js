@@ -52,14 +52,14 @@ export default class SendSquareWaveScreen extends Component {
       parseInt(this.state.firstHalfCycleHiLoRight)
     );
     amp.push(
-      parseInt(this.state.peaKToPeakAmplitudeLeft),
-      parseInt(this.state.peaKToPeakAmplitudeRight)
+      parseFloat(this.state.peaKToPeakAmplitudeLeft),
+      parseFloat(this.state.peaKToPeakAmplitudeRight)
     );
     RNWaveformAudioLib.SendSquareWave(
       freq,
       fhchll,
       amp,
-      parseInt(this.state.length)
+      parseFloat(this.state.length)
     );
   };
 

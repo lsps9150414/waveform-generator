@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
 import {
-  View,
   Button,
   ScrollView,
   StyleSheet,
+  View,
 } from 'react-native';
-import InputField from './components/InputField';
+import React, { Component } from 'react';
 
+import InputField from './components/InputField';
 import { NativeModules } from "react-native";
+
 const RNWaveformAudioLib = NativeModules.RNWaveformAudioLib;
 
 const styles = StyleSheet.create({
@@ -116,6 +117,7 @@ export default class SendPulseSequence extends Component {
             placeholder="enter: '1, 2, 3, 4, 5'"
             value={pulseSpaceTimeDurationLeft}
             onChangeText={(value) => { this.updateState('pulseSpaceTimeDurationLeft', value); }}
+            keyboardType="numeric"
             inRow
           />
           <InputField
@@ -123,6 +125,7 @@ export default class SendPulseSequence extends Component {
             placeholder="enter: '1, 2, 3, 4, 5'"
             value={pulseSpaceTimeDurationRight}
             onChangeText={(value) => { this.updateState('pulseSpaceTimeDurationRight', value); }}
+            keyboardType="numeric"
             inRow
           />
         </View>
