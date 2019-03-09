@@ -59,8 +59,8 @@ export default class App extends React.Component {
               {isSquareWave && (<SendSquareWaveScreen />)}
               {!isSquareWave && (<SendPulseSequenceScreen />)}
             </TouchableOpacity>
-            {/* <View style={{ backgroundColor: 'yellow', height: 400 }} />
-            <View style={{ backgroundColor: 'green', height: 400 }} /> */}
+            {/* <View style={{ backgroundColor: 'yellow', height: 400 }} /> */}
+            {/* <View style={{ backgroundColor: 'green', height: 400 }} /> */}
             <StopSquareWaveScreen />
           </View>
         </ScrollView>
