@@ -1,22 +1,19 @@
-import React from "react";
 import {
-  StyleSheet,
-  View,
-  Text,
   Button,
   Keyboard,
+  ScrollView,
+  StyleSheet,
   TouchableOpacity,
-  Dimensions,
+  View,
 } from "react-native";
 
-import StopSquareWaveScreen from './src/StopSquareWaveScreen';
-import SendSquareWaveScreen from "./src/SendSquareWaveScreen";
+import React from "react";
 import SendPulseSequenceScreen from "./src/SendPulseSequenceScreen";
+import SendSquareWaveScreen from "./src/SendSquareWaveScreen";
+import StopSquareWaveScreen from './src/StopSquareWaveScreen';
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 24,
-    flex: 1,
     backgroundColor: "#ddd",
   },
   tabButtonGroup: {
@@ -39,7 +36,7 @@ export default class App extends React.Component {
       focused: 'squareWave',
     });
   };
-  
+
   focusPulseSequence = () => {
     this.setState({
       focused: 'pulseSequence',
@@ -52,17 +49,21 @@ export default class App extends React.Component {
     const isSquareWave = focused === 'squareWave';
 
     return (
-      <View style={styles.container}>
-        <View style={styles.tabButtonGroup}>
-          <Button style={styles.tabButton} title="SquareWave" onPress={this.focusSquareWave} disabled={isSquareWave} />
-          <Button style={styles.tabButton} title="PulseSequence" onPress={this.focusPulseSequence} disabled={!isSquareWave} />
-        </View>
-        <TouchableOpacity onPress={() => { Keyboard.dismiss(); }}>
-          {isSquareWave && (<SendSquareWaveScreen />)}
-          {!isSquareWave && (<SendPulseSequenceScreen />)}
-        </TouchableOpacity>
-        <StopSquareWaveScreen />
-      </View>
+        <ScrollView style={styles.container}>
+          <View>
+            <View style={styles.tabButtonGroup}>
+              <Button style={styles.tabButton} title="Square Wave" onPress={this.focusSquareWave} disabled={isSquareWave} />
+              <Button style={styles.tabButton} title="Pulse Sequence" onPress={this.focusPulseSequence} disabled={!isSquareWave} />
+            </View>
+            <TouchableOpacity onPress={() => { Keyboard.dismiss(); }}>
+              {isSquareWave && (<SendSquareWaveScreen />)}
+              {!isSquareWave && (<SendPulseSequenceScreen />)}
+            </TouchableOpacity>
+            {/* <View style={{ backgroundColor: 'yellow', height: 400 }} />
+            <View style={{ backgroundColor: 'green', height: 400 }} /> */}
+            <StopSquareWaveScreen />
+          </View>
+        </ScrollView>
     );
   }
 }

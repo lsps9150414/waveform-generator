@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import { Alert, NativeModules } from "react-native";
 import {
-  View,
   Button,
   StyleSheet,
+  View,
 } from 'react-native';
+import React, { Component } from 'react';
+
 import InputField from './components/InputField';
 
-import { NativeModules } from "react-native";
 const RNWaveformAudioLib = NativeModules.RNWaveformAudioLib;
 
 const styles = StyleSheet.create({
@@ -28,7 +29,15 @@ export default class StopSquareWaveScreen extends Component {
 
   handleSend = () => {
     console.log(this.state);
-    RNWaveformAudioLib.StopSquareWave(parseFloat(this.state.delayTime));
+    try {
+      RNWaveformAudioLib.StopSquareWave(parseFloat(this.state.delayTime));
+    } catch (error) {
+      Alert.alert(
+        'Error',
+        error.message,
+        [{ text: 'OK', onPress: () => console.log('OK Pressed') }],
+      );
+    }
   }
 
   render() {
